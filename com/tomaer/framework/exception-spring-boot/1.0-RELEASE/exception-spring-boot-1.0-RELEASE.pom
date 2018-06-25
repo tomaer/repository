@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <modules>
+    <module>exception-spring-boot-starter</module>
+  </modules>
+
+  <parent>
+    <groupId>com.tomaer.framework</groupId>
+    <artifactId>framework-parent</artifactId>
+    <version>1.0-RELEASE</version>
+  </parent>
+
+  <groupId>com.tomaer.framework</groupId>
+  <artifactId>exception-spring-boot</artifactId>
+  <version>1.0-RELEASE</version>
+  <name>exception-spring-boot</name>
+  <packaging>pom</packaging>
+  <description></description>
+  <url>http://freamwork.tomaer.com/exception-spring-boot</url>
+
+
+  <repositories>
+    <repository>
+      <id>tomaer-repository-releases</id>
+      <name>Release Repository</name>
+      <url>https://raw.githubusercontent.com/tomaer/repository/release</url>
+      <releases><enabled>true</enabled></releases>
+      <snapshots><enabled>false</enabled></snapshots>
+    </repository>
+    <repository>
+      <id>tomaer-repository-snapshots</id>
+      <name>Snapshot Repository</name>
+      <url>https://raw.githubusercontent.com/tomaer/repository/snapshot</url>
+      <releases><enabled>false</enabled></releases>
+      <snapshots>
+        <enabled>true</enabled>
+        <updatePolicy>always</updatePolicy>
+      </snapshots>
+    </repository>
+  </repositories>
+
+</project>
