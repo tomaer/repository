@@ -22,6 +22,7 @@
         <java.version>1.8</java.version>
         <lombok.version>1.18.0</lombok.version>
         <commons-lang3.version>3.7</commons-lang3.version>
+        <exception-spring-boot-starter.version>1.0-RELEASE</exception-spring-boot-starter.version>
     </properties>
 
     <modules>
