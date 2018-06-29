@@ -1,45 +1,102 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <modules>
-    <module>exception-spring-boot-starter</module>
-  </modules>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
-  <parent>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.5.14.RELEASE</version>
+    </parent>
+
     <groupId>com.tomaer.framework</groupId>
-    <artifactId>framework-parent</artifactId>
+    <artifactId>exception-spring-boot</artifactId>
     <version>1.0-RELEASE</version>
-  </parent>
+    <name>exception-spring-boot</name>
+    <packaging>pom</packaging>
+    <url>http://freamwork.tomaer.com/exception-spring-boot</url>
 
-  <groupId>com.tomaer.framework</groupId>
-  <artifactId>exception-spring-boot</artifactId>
-  <version>1.0-RELEASE</version>
-  <name>exception-spring-boot</name>
-  <packaging>pom</packaging>
-  <description></description>
-  <url>http://freamwork.tomaer.com/exception-spring-boot</url>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>1.8</java.version>
+        <lombok.version>1.18.0</lombok.version>
+        <commons-lang3.version>3.7</commons-lang3.version>
+    </properties>
 
+    <modules>
+        <module>exception-spring-boot-starter</module>
+    </modules>
 
-  <repositories>
-    <repository>
-      <id>tomaer-repository-releases</id>
-      <name>Release Repository</name>
-      <url>https://raw.githubusercontent.com/tomaer/repository/release</url>
-      <releases><enabled>true</enabled></releases>
-      <snapshots><enabled>false</enabled></snapshots>
-    </repository>
-    <repository>
-      <id>tomaer-repository-snapshots</id>
-      <name>Snapshot Repository</name>
-      <url>https://raw.githubusercontent.com/tomaer/repository/snapshot</url>
-      <releases><enabled>false</enabled></releases>
-      <snapshots>
-        <enabled>true</enabled>
-        <updatePolicy>always</updatePolicy>
-      </snapshots>
-    </repository>
-  </repositories>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.tomaer.framework</groupId>
+                <artifactId>exception-spring-boot-starter</artifactId>
+                <version>${exception-spring-boot-starter.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>${commons-lang3.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+        </dependency>
+    </dependencies>
+
+    <repositories>
+        <repository>
+            <id>aliyun-resp</id>
+            <name>aliyun-resp</name>
+            <url>http://maven.aliyun.com/nexus/content/groups/public</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>aliyun-plugin-resp</id>
+            <name>aliyun-plugin-resp</name>
+            <url>http://maven.aliyun.com/nexus/content/groups/public</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <configuration>
+                        <source>${java.version}</source>
+                        <target>${java.version}</target>
+                        <encoding>${project.build.sourceEncoding}</encoding>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
 
 </project>
